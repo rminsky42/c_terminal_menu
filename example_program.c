@@ -1,4 +1,7 @@
 #include "lib_termenu.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -11,10 +14,7 @@ int main()
     }
 
     printf("Menu Title: %s\n", menu->title);
-    printf("Options:\n");
-    for (int i = 0; i < menu->count; i++) {
-        printf("  %d: %s\n", i + 1, menu->options[i]);
-    }
+    display_menu(menu);
 
     return 0; // Exit successfully
 }

@@ -1,6 +1,10 @@
 #ifndef LIB_TERMENU_H
 #define LIB_TERMENU_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 typedef struct {
     char **options;      // Array of menu options
     int count;          // Number of options

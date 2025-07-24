@@ -20,3 +20,15 @@ Menu *create_menu(char *title, char **options, int count) {
     menu->selected = 0;
     return menu;
 }
+
+void display_menu(Menu *menu) {
+    printf("\033[H\033[J"); // Clear the screen
+    printf("\033[1;34m%s\033[0m\n", menu->title); // Print title in blue
+    for (int i = 0; i < menu->count; i++) {
+        if (i == menu->selected) {
+            printf("\033[1;32m> \033[0m%s\n", menu->options[i]); // Highlight selected option
+        } else {
+            printf("  %s\n", menu->options[i]);
+        }
+    }
+}
